@@ -1,0 +1,15 @@
+{
+  "name": "call-companion",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A lightweight AI-assisted cold-call companion for sales conversations.",
+  "scripts": {
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev:backend": "npm --prefix backend run dev",
+    "build": "npm --prefix frontend run build",
+    "start": "npm --prefix backend start",
+    "validate:stages": "node scripts/validate-stage-config.mjs",
+    "test:api": "node --test scripts/tests/*.test.mjs",
+    "test": "npm run validate:stages && npm run test:api"
+  }
+}
