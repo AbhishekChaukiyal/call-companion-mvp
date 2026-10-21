@@ -184,3 +184,23 @@ call-companion/
 - Current Gemini model IDs: https://ai.google.dev/gemini-api/docs/models
 - Cerebras Inference docs: https://docs.cerebras.ai/
 - Mistral Chat Completions: https://docs.mistral.ai/api
+
+## Live deployment
+
+- **Frontend:** https://call-companion-mvp.vercel.app/
+- **Backend health:** https://call-companion-api.onrender.com/health
+- **Database:** Supabase PostgreSQL
+- **LLM provider:** Google Gemini
+
+### How AI is used
+
+The backend uses Google Gemini for three tasks:
+
+1. **Stage suggestions:** Classifies prospect statements against the
+   eight-stage call framework and recommends a next move.
+2. **Note cleanup:** Improves rough notes while preserving their meaning.
+3. **Call summaries:** Drafts a concise summary, suggested outcome,
+   and potential follow-up action.
+
+AI-generated content is advisory. The caller reviews it before saving.
+API keys remain on the backend and are not exposed to the frontend.
