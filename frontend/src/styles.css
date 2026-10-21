@@ -91,3 +91,14 @@
   letter-spacing: 1.2px;
   font-weight: 800;
 }
+
+.stage-order-note {
+  margin: 10px 0;
+  padding: 9px 10px;
+  border: 1px solid #e7eaff;
+  border-radius: 7px;
+  background: #f8f9ff;
+  color: #7b86a0;
+  font-size: 10px;
+  line-height: 1.5;
+}
