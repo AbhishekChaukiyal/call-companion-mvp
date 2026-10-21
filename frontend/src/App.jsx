@@ -295,6 +295,41 @@ function App() {
         ) : (
           <section className="page-content workspace-page">
             <div className="call-context-bar"><div className="call-context-left"><span className="call-avatar">{initials(activeCall.prospectName)}</span><div><div className="context-name-row"><h1>{activeCall.prospectName || 'Prospect'}</h1>{readOnly ? <span className="state-chip done"><span /> Completed call</span> : <span className="live-tag"><span /> LIVE WORKSPACE</span>}</div><p>{[activeCall.company, activeCall.prospectRole].filter(Boolean).join(' · ') || 'Prospect details not added'} <span className="context-dot">•</span> Started {prettyTime(activeCall.startedAt)}</p></div></div><div className="call-context-actions"><div className="stage-counter"><span>{stagesReached.toString().padStart(2, '0')}</span><small> / 08<br />SAVED</small></div>{!readOnly && <button className="finish-call-button" onClick={openCloseout}><CheckCircle2 size={16} /> Finish call</button>}<button className="plain-icon-button" title="Back to new call" onClick={() => { setActiveCall(null); setReadOnly(false); }}><X size={17} /></button></div></div>
+{readOnly && (
+  <section
+    className="call-review-summary"
+    aria-labelledby="call-review-summary-title"
+  >
+    <div className="call-review-summary-heading">
+      <div className="section-icon blue">
+        <FileText size={17} />
+      </div>
+      <div>
+        <h2 id="call-review-summary-title">Call summary</h2>
+        <p>Saved when this call was closed</p>
+      </div>
+    </div>
+
+    {activeCall.summary?.trim() ? (
+      <p className="call-review-summary-text">
+        {activeCall.summary}
+      </p>
+    ) : (
+      <p className="call-review-summary-empty">
+        No summary was saved for this call.
+      </p>
+    )}
+
+    <div className="call-review-outcome">
+      <span className="call-review-outcome-label">
+        CALL OUTCOME
+      </span>
+      <span className="outcome-chip">
+        {activeCall.outcome || 'Not logged / unclear'}
+      </span>
+    </div>
+  </section>
+)}
 
             <div className="workspace-layout">
               <aside className="stage-rail">

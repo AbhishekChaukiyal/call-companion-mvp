@@ -26,3 +26,68 @@
 .stage-tap-option.chosen .tap-index{background:#5364ed;color:#fff}
 .stage-tap-option .chosen-check{margin-left:auto;position:static;flex:0 0 14px}
 @media (max-width:420px){.stage-tap-options{grid-template-columns:1fr}}
+
+
+
+/* Saved call summary in completed-call review mode */
+.call-review-summary {
+  background: #fff;
+  border: 1px solid #e8ebf3;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 18px 20px;
+  margin-bottom: 18px;
+}
+
+.call-review-summary-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.call-review-summary-heading h2 {
+  font-size: 14px;
+  font-weight: 800;
+  margin: 0 0 4px;
+  color: #28334f;
+}
+
+.call-review-summary-heading p {
+  font-size: 10px;
+  margin: 0;
+  color: #98a0b3;
+}
+
+.call-review-summary-text {
+  margin: 0;
+  color: #4d5972;
+  font-size: 12px;
+  line-height: 1.75;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+.call-review-summary-empty {
+  margin: 0;
+  color: #8d96ab;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.call-review-outcome {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  border-top: 1px solid #edf0f6;
+  margin-top: 15px;
+  padding-top: 13px;
+}
+
+.call-review-outcome-label {
+  color: #929cb3;
+  font-size: 9px;
+  letter-spacing: 1.2px;
+  font-weight: 800;
+}
